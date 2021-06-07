@@ -1,0 +1,12 @@
+[2021-06-07T21:27:03Z INFO  cect] Config { num_messages: 1000, sender_configs: [SenderConfig { mean_time: 0.01, failure_rate: 0.3 }], report_period: 2.0 }
+[2021-06-07T21:27:03Z INFO  cect] Expected rate 70.000/s
+[2021-06-07T21:27:03Z INFO  cect::monitor] MONITOR sent: 0, failed: 0, rate: N/A
+[2021-06-07T21:27:05Z INFO  cect::monitor] MONITOR sent: 111, failed: 60, rate: 55.458/s
+[2021-06-07T21:27:07Z INFO  cect::monitor] MONITOR sent: 231, failed: 103, rate: 57.689/s
+[2021-06-07T21:27:09Z INFO  cect::monitor] MONITOR sent: 351, failed: 157, rate: 58.444/s
+[2021-06-07T21:27:11Z INFO  cect::monitor] MONITOR sent: 475, failed: 198, rate: 59.322/s
+[2021-06-07T21:27:13Z INFO  cect::monitor] MONITOR sent: 597, failed: 250, rate: 59.655/s
+[2021-06-07T21:27:15Z INFO  cect::monitor] MONITOR sent: 717, failed: 298, rate: 59.700/s
+[2021-06-07T21:27:17Z INFO  cect::monitor] MONITOR sent: 842, failed: 352, rate: 60.095/s
+[2021-06-07T21:27:19Z INFO  cect::monitor] MONITOR sent: 965, failed: 403, rate: 60.270/s
+[2021-06-07T21:27:21Z INFO  cect::monitor] MONITOR sent: 1000, failed: 411, rate: 55.506/s
