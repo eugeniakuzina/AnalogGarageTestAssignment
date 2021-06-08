@@ -11,7 +11,7 @@
 2. No validation on input params. If entered rate in config > 1, system fails with exception. Incorrect params should be handled gracefully
 
 ### Open questions:
-1. 'Expected rate' value is not clearly defined. It's not defined in the requirements and it's calculated value doesn't make much sense. What is the value of it after all? 
+1. 'Expected rate' value is not clearly defined. It's not defined in the requirements and its calculated value doesn't make much sense. What is the value of it after all? 
 
 ### Implementation:
 1. Test plan is implemented in Java because that's the language I'm most familiar with, but a better choice for this particular project would've been Python for available stat and data processing libraries
