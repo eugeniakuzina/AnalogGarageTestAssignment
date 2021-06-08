@@ -1,6 +1,5 @@
 package com.analog.test;
 
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -12,9 +11,9 @@ import org.testng.annotations.Test;
 
 public class Tests {
 
-  // these values are hard-coded for confidence level of 99% for two-tailed test
-  public static final double POSITIVE_Z_SCORE = 2.575;
-  public static final double NEGATIVE_Z_SCORE = -2.575;
+  // these values are hard-coded quantile values for confidence level of 99% for two-tailed test
+  public static final double POSITIVE_QUANTILE = 2.575;
+  public static final double NEGATIVE_QUANTILE = -2.575;
 
   @Test
   public void testNumOfSentMessages() throws IOException {
@@ -47,15 +46,16 @@ public class Tests {
 
     double zValue = new ZTest().test(failedRateInConfig, failedRateInOutput, numOfSentMessages);
 
-    assertTrue(zValue < POSITIVE_Z_SCORE,
+    // TODO: use absolute value instead of two asserts
+    assertTrue(zValue < POSITIVE_QUANTILE,
         "Calculated Z value is out of scope of Z score. "
             + "Real rate of failed messages is incorrect with 99% confidence. ZValue "
-            + zValue + " boundary " + POSITIVE_Z_SCORE);
+            + zValue + " boundary " + POSITIVE_QUANTILE);
 
-    assertTrue(zValue > NEGATIVE_Z_SCORE,
+    assertTrue(zValue > NEGATIVE_QUANTILE,
         "Calculated Z value is out of scope of Z score. "
             + "Real rate of failed messages is incorrect with 99% confidence. ZValue "
-            + zValue + " boundary " + NEGATIVE_Z_SCORE);
+            + zValue + " boundary " + NEGATIVE_QUANTILE);
   }
 
   // This test implementation is for ONE sender only, for simplicity
@@ -70,15 +70,15 @@ public class Tests {
 
     double zValue = new ZTest().test(meanTimeInConfig, meanTimeInOutput, numOfSentMessages);
 
-    assertTrue(zValue < POSITIVE_Z_SCORE,
+    assertTrue(zValue < POSITIVE_QUANTILE,
         "Calculated Z value is out of scope of Z score. "
             + "Real rate of failed messages is incorrect with 99% confidence. ZValue "
-            + zValue + " boundary " + POSITIVE_Z_SCORE);
+            + zValue + " boundary " + POSITIVE_QUANTILE);
 
-    assertTrue(zValue > NEGATIVE_Z_SCORE,
+    assertTrue(zValue > NEGATIVE_QUANTILE,
         "Calculated Z value is out of scope of Z score. "
             + "Real rate of failed messages is incorrect with 99% confidence. ZValue "
-            + zValue + " boundary " + NEGATIVE_Z_SCORE);
+            + zValue + " boundary " + NEGATIVE_QUANTILE);
   }
 
 
