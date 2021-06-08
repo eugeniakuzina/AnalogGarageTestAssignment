@@ -26,8 +26,8 @@
 
 ### Test plan:
 1. Implemented: Verify number of sent messages. Compare expected (num_messages in config) with actual (sent messages in monitor)
-2. Verify report period. Compare expected (report_period in config) with actual time stamps in the monitor output
-3. Implemented for one sender: Verify expected rate. Compare expected (mean_time) and actual expected rate (1 / Expected rate) from the monitor. This test scenario might change based on the answer to the open question
+2. Verify report period. Compare expected (report_period in config) with actual time stamps in the monitor output 
+3. Implemented for one sender: Verify expected rate. Compare expected (mean_time) and actual expected rate (1 / Expected rate) from the monitor. This test scenario might change based on the answer to the open question
 4. Verify expected rate for multiple senders. Compare expected (sum of mean_time for each sender) and actual expected rate from the monitor (1 / Expected rate). This test scenario might change based on the answer to the open question. 
 5. Implementer for one sender: Verify fail rate for all senders. Using Z-test for binomial distribution with 99% confidence level compare expected value (failure_rate from sender config) and calculated failure rate from monitor statistics.
 6. Verify fail rate for each individual sender. If monitor output would be improved to show detailed statistics of sent messages for each sender, it would be possible to compare failure_rate from config for each sender to calculated failure rate from monitor statistics using Z-test for binomial distribution with 99% confidence level
