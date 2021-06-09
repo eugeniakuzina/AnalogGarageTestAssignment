@@ -58,28 +58,4 @@ public class Tests {
             + zValue + " boundary " + NEGATIVE_QUANTILE);
   }
 
-  // This test implementation is for ONE sender only, for simplicity
-  @Test
-  public void testAverageTimePerMessage() throws IOException {
-
-    double meanTimeInConfig = new YamlConfigParser().parse().getSenders().get(0).getMean_time();
-    // double meanTimeInOutput = new OutputParser().getRealTimePerMessage();
-    double meanTimeInOutput = new OutputParser().getExpectedTimePerMessage();
-
-    int numOfSentMessages = new OutputParser().getNumOfSentMessages();
-
-    double zValue = new ZTest().test(meanTimeInConfig, meanTimeInOutput, numOfSentMessages);
-
-    assertTrue(zValue < POSITIVE_QUANTILE,
-        "Calculated Z value is out of scope of Z score. "
-            + "Real rate of failed messages is incorrect with 99% confidence. ZValue "
-            + zValue + " boundary " + POSITIVE_QUANTILE);
-
-    assertTrue(zValue > NEGATIVE_QUANTILE,
-        "Calculated Z value is out of scope of Z score. "
-            + "Real rate of failed messages is incorrect with 99% confidence. ZValue "
-            + zValue + " boundary " + NEGATIVE_QUANTILE);
-  }
-
-
 }
